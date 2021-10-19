@@ -6,7 +6,7 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text('Dice'),
+          title: Text('Dicee'),
           backgroundColor: Colors.red,
         ),
         body: DicePage(),
@@ -18,16 +18,29 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 2;
+
     return SafeArea(
-      child: Row(
-        children: [
-          Expanded(
-            child: Image.asset("images/dice1.png"),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    print("b");
+                  },
+                  child: Image.asset("images/dice$leftDiceNumber.png"),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                    onPressed: () {}, child: Image.asset("images/dice1.png")),
+              ),
+            ],
           ),
-          Expanded(
-            child: Image.asset("images/dice1.png"),
-          ),
-        ],
+        ),
       ),
     );
   }
